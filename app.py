@@ -42,9 +42,8 @@ def fuel():
     float_features = [float(x) for x in request.form.values()]
     final_features = [np.array(float_features)]
     prediction = model_lr.predict(final_features)
-    output = prediction[0]
-    output = int(pred)
-    return render_template('resultf.html', prediction_text='fuel price for kilometer driven is :{}'.format(pred))
+    output = int(prediction[0])
+    return render_template('resultf.html', prediction_text='fuel price for kilometer driven is :{}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
